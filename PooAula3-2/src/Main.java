@@ -69,7 +69,7 @@
 							for(int i = 0; i<produtos.size(); i++) {
 								if(produtos.get(i).getNome().equals(nome3)) {
 									if(produtos.get(i).getQuantidade()>0) {
-										System.out.println(produtos.get(i).getNome() + "tem " + produtos.get(i).getQuantidade() + "No estoque.");
+										System.out.println(produtos.get(i).getNome() + " tem " + produtos.get(i).getQuantidade() + " no estoque.");
 										System.out.println("Quantos deseseja vender: ");
 										int venda = tec.nextInt();
 											if(venda <= produtos.get(i).getQuantidade()) {
