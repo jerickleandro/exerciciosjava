@@ -68,8 +68,19 @@
 							String nome3 = tec.nextLine();
 							for(int i = 0; i<produtos.size(); i++) {
 								if(produtos.get(i).getNome().equals(nome3)) {
-									produtos.remove(i);
-									System.out.println("Produto vendido!");
+									if(produtos.get(i).getQuantidade()>0) {
+										System.out.println(produtos.get(i).getNome() + "tem " + produtos.get(i).getQuantidade() + "No estoque.");
+										System.out.println("Quantos deseseja vender: ");
+										int venda = tec.nextInt();
+											if(venda <= produtos.get(i).getQuantidade()) {
+												produtos.get(i).setQuantidade(produtos.get(i).getQuantidade()-venda);
+												System.out.println("Venda realizada!");
+											}else {
+												System.out.println("Essa quantidade é mais do que tem em estoque");
+											}
+									}else {
+										System.out.println("Produto sem estoque");
+									}
 								}
 							}
 						}	
